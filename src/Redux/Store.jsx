@@ -12,7 +12,7 @@ const persistedUserReducer = persistReducer(userPersistConfig, UserReducer)
 
 export const Store=configureStore({
     reducer:{
-        User:persistedUserReducer,
+        Users:persistedUserReducer,
     }
 })
 

@@ -6,9 +6,11 @@ export const UserAuth = createSlice({
         Token:token, // Get token from localStorage or set default
     },
     reducers: {
-
+        TokenUp(state,action){
+            state.Token=action.payload.token;
+        }
     },
 });
 
-export const {  } = UserAuth.actions;
+export const { TokenUp } = UserAuth.actions;
 export const UserReducer = UserAuth.reducer;

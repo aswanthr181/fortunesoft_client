@@ -2,11 +2,20 @@ import React, { useEffect, useState } from 'react'
 import './Banner.css'
 function Banner({ array }) {
     const [banner, setBanner] = useState([])
-    useEffect(() => {
-        setInterval(() => {
-            fetchBanner();
-        }, 3000)
-    }, [])
+    // useEffect(() => {
+    //     setInterval(() => {
+    //         fetchBanner();
+    //     }, 3000)
+    // }, [])
+    useEffect(()=>{
+        const Interval=setInterval(()=>{
+            fetchBanner()
+        },3000)
+
+        return()=>{
+            clearInterval(Interval)
+        }
+    })
 
     const fetchBanner = () => {
         const random = Math.floor(Math.random() * array.length)

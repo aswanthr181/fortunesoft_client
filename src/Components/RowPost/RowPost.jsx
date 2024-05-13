@@ -1,26 +1,29 @@
 import React, { useState } from 'react'
 import './RowPost.css'
 import Modal from '../Modal/Modal'
-function RowPost({category,array}) {
-  const [details,setDetails]=useState('')
-  const [showdetails,setShowDetails]=useState(false)
+function RowPost({ category, array }) {
+  const [details, setDetails] = useState('')
+  const [showdetails, setShowDetails] = useState(false)
+  const [search, setSearch] = useState('')
 
-  const handleMovie=(movie)=>{
+  const handleMovie = (movie) => {
     setShowDetails(true)
     setDetails(movie)
   }
   // const closeModal=()=>{
   //   setShowDetails(false)
   // }
+  
   return (
     <div className='row'>
+      
       <h2>{category}</h2>
       <div className='posters'>
-        {array.map((movie)=>{
-          return(
+        {array.map((movie) => {
+          return (
             <>
-            <img onClick={()=>handleMovie(movie)} className='poster' src={movie.poster} alt="" />
-            
+              <img onClick={() => handleMovie(movie)} className='poster' src={movie.poster} alt="" />
+
             </>
           )
         })}
